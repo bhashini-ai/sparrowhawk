@@ -12,6 +12,7 @@ proto_sources = items.pb.cc \
 libsparrowhawk_la_SOURCES = field_path.cc \
                             io_utils.cc \
                             normalizer.cc \
+                            normalizer_c_wrapper.cc \
                             normalizer_utils.cc \
                             numbers.cc \
                             protobuf_parser.cc \
