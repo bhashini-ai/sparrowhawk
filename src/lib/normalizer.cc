@@ -190,7 +190,7 @@ bool Normalizer::VerbalizeUtt(Utterance *utt) const {
       }
     } else if (token->type() == Token::SEMIOTIC_CLASS) {
       if (!token->skip()) {
-        LoggerDebug("Verbalizing: [%s]\n", token_form.c_str());
+        // LoggerDebug("Verbalizing: [%s]\n", token_form.c_str());
         string words;
         if (VerbalizeSemioticClass(*token, &words)) {
           AddWords(utt, token, words);
@@ -223,7 +223,7 @@ bool Normalizer::VerbalizeUtt(Utterance *utt) const {
       LoggerError("No type found for [%s]", token_form.c_str());
     }
   }
-  LoggerDebug("Verbalize output: Words\n%s\n\n", LinearizeWords(utt).c_str());
+  // LoggerDebug("Verbalize output: Words\n%s\n\n", LinearizeWords(utt).c_str());
   return true;
 }
 
