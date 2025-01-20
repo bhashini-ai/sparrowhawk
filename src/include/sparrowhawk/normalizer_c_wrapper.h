@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 int Normalizer_Setup(const char *configuration_proto, const char *pathname_prefix);
-int Normalizer_Normalize(const char *input, char **output);
+char* Normalizer_Normalize(const char *input);
 
 #ifdef __cplusplus
 }

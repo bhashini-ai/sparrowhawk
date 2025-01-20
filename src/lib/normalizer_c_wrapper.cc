@@ -24,19 +24,18 @@ int Normalizer_Setup(const char *configuration_proto, const char *pathname_prefi
     return retValue ? 1 : 0;
 }
 
-int Normalizer_Normalize(const char *input, char **output) {
+char* Normalizer_Normalize(const char *input) {
     lazyNormalizer();
     string input_string(input);
     string output_string;
     bool retValue = Normalizer_instance->Normalize(input_string, &output_string);
     if (retValue) {
         int length = output_string.length();
-        *output = new char[length + 1];
-        strcpy(*output, output_string.c_str());
-        *output[length] = '\0';
-        return length + 1;
+        char* output = new char[length + 1];
+        strcpy(output, output_string.c_str());
+        return output;
     }
-    return -1;
+    return "";
 }
 
 #ifdef __cplusplus
